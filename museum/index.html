@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/star.css">
+    <script src="js/antinspect.js"></script>
+    <link rel="stylesheet" href="css/all.min.css">
+    <script src="js/rocket-loader.min.js" data-cf-settings="0e3129054fa97055e1fdc294-|49"></script>
+    </head><body onload="document.body.style.opacity='1'" class="wallpaper">
+    <title>@1900ogn</title>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        @font-face {
+            font-family: 'Minecraftia';
+            src: url('fonts/Minecraftia.ttf') format('truetype');
+        }
+
+        @keyframes sparkling {
+            0% {
+                opacity: 0.2;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.2;
+            }
+        }
+
+        .sparkle-text {
+            animation: sparkling 2s infinite;
+        }
+
+        .navigation a {
+            text-shadow: 0px 0px 16.5px white;
+        }
+
+        .sparkle-text {
+            animation: sparkling 2s infinite;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: 'Minecraftia', sans-serif;
+            font-size: 24px;
+            z-index: 9999;
+            cursor: pointer;
+        }
+
+    </style>
+
+
+    <div id="overlay">
+        <div>
+            <p>Click to enter...</p>
+        </div>
+    </div>
+
+    <div class="galaxy">
+        <div class="stars1"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
+    </div>
+
+    <div class="container">
+        <h1 class="title">ogn.lol</h1>
+        <div class="profiles">
+            
+            <a href="https://discord.gg/ogns" class="profile-link">
+                <div class="profile">
+                    <img src="images/ogns.jpg" alt="ogns">
+                    <p>.gg/ogns</p>
+                </div>
+            </a>
+            <a href="https://late.lol/" class="profile-link">
+                <div class="profile">
+                    <img src="images/empathypfpnew.jpg" alt="Empathy">
+                    <p>@Empathy</p>
+                </div>
+            </a>
+            <a href="https://fakecrime.bio/ogn" class="profile-link">
+                <div class="profile">
+                    <i class="fa-solid fa-crown"></i>
+                    <img src="images/ogn.jpg" alt="ogn">
+                    <p>@ogn</p>
+                </div>
+            </a>
+            <a href="https://t.me/procomkid" class="profile-link">
+                <div class="profile">
+                    <img src="images/Widowpfp.jpg" alt="widow">
+                    <p>@Widow</p>
+                </div>
+            </a>
+            <a href="https://late.lol/" class="profile-link">
+                <div class="profile">
+                    <img src="images/memory.jpg" alt="memory">
+                    <p>ogmarket</p>
+                </div>
+            </a>
+        </div>
+        <div class="archive-link">
+            <a href="/museum" class="profile-link">
+                <p>Museum</p>
+            </a>
+        </div>
+    </div>
+    
+
+    <div id="bottom-left">
+        © <a href="https://discord.gg/ogns" target="_blank" style="color:white; text-decoration: none;">ogn</a> | <a href="https://ogn.lol/" target="_blank" style="color:white; text-decoration: none;">ogn.lol</a> | 2025
+    </div>
+
+    <script>
+        document.getElementById("overlay").addEventListener("click", function() {
+            document.getElementById("overlay").style.display = "none";
+            var audio = new Audio('/music/ANTARCTICA.mp3');
+            audio.volume = 0.3;
+            audio.play();
+        });
+    </script>
+
+
+</body></html>
