@@ -1,134 +1,1180 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#34d8eb">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/star.css">
-    <script src="js/antinspect.js"></script>
-    <link rel="stylesheet" href="css/all.min.css">
-    <script src="js/rocket-loader.min.js" data-cf-settings="0e3129054fa97055e1fdc294-|49"></script>
-    </head><body onload="document.body.style.opacity='1'" class="wallpaper">
-    <title>@1900ogn</title>
-    <link rel="stylesheet" href="css/index.css">
+    <title>ogn.lol</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/xan.png">
+    <link rel="shortcut icon" type="image/png" href="images/xan.png">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ogn.lol">
+    <meta property="og:description" content="Experience ultimate HWID virtualization with ogn.lol. Protect your hardware data at the kernel level.">
+    <meta property="og:image" content="images/xan.png">
+    <meta property="og:url" content="https://ogn.lol">
+    <meta property="og:type" content="website">
+
+    <!-- External Scripts -->
+    <script src="js/three.min.js" type="21c8569107ae4a66c2dd8051-text/javascript"></script>
+    <script src="https://cdn.sellix.io/static/js/embed.js" type="21c8569107ae4a66c2dd8051-text/javascript"></script>
+    <script src="js/gsap.min.js" type="21c8569107ae4a66c2dd8051-text/javascript"></script>
+    <script src="js/ScrollTrigger.min.js" type="21c8569107ae4a66c2dd8051-text/javascript"></script>
+    <script src="js/script.js" type="21c8569107ae4a66c2dd8051-text/javascript"></script>
+    <script type="21c8569107ae4a66c2dd8051-module" src="js/embeds.js"></script>
+    
+    <!-- External Styles -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.sellix.io/static/css/embed.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        @font-face {
-            font-family: 'Minecraftia';
-            src: url('fonts/Minecraftia.ttf') format('truetype');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-color: #ff0000;
+            --background-color: #0f0f0f;
+            --text-color: #ffffff;
+            --card-background: #1a1a1a;
         }
 
-        @keyframes sparkling {
-            0% {
-                opacity: 0.2;
-            }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-            50% {
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins';
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+	    font-weight: 550; /* Alternatively, use 700 */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: rgba(15, 15, 15, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .ogn {
+            color: white;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            display: inline-block;
+        }
+
+        .lol {
+            color: var(--primary-color);
+            display: inline-block;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+            transition: text-shadow 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 8rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.2s;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease-in-out;
+            animation: fadeInUp 1s ease 0.4s;
+        }
+
+        .btn:hover {
+            background-color: #cc0000;
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 15px var(--primary-color);
+        }
+
+        .glow-effect:hover {
+            box-shadow: 0 0 25px var(--primary-color);
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 2rem;
+            transform: translateX(30px);
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--text-color);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .section {
+            padding: 100px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        .virtualization-grid, .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .virtualization-item, .pricing-item {
+            background-color: var(--card-background);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .virtualization-item:hover, .pricing-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .virtualization-item i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .virtualization-item h3, .pricing-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .pricing-item .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .faq-list {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .faq-item {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 5px 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background-color: var(--card-background);
+            margin-top: -5px;
+        }
+
+        .faq-answer.active {
+            padding: 10px 20px;
+            max-height: 200px;
+        }
+
+        .white-glow {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        .blue-glow {
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+        }
+
+        .floating-text {
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
                 opacity: 1;
-            }
-
-            100% {
-                opacity: 0.2;
+                transform: translateY(0);
             }
         }
 
-        .sparkle-text {
-            animation: sparkling 2s infinite;
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.8rem;
         }
 
-        .navigation a {
-            text-shadow: 0px 0px 16.5px white;
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
         }
 
-        .sparkle-text {
-            animation: sparkling 2s infinite;
-        }
-
-        #overlay {
+        #intro-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: black;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
-            font-family: 'Minecraftia', sans-serif;
-            font-size: 24px;
             z-index: 9999;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        #intro-text {
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
             cursor: pointer;
         }
 
+        #main-content {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .stats-container {
+                flex-direction: column;
+                align-items: center;
+                transform: none;
+            }
+
+            .stat-item {
+                margin-bottom: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--background-color);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                margin: 10px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .virtualization-grid, .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #intro-text {
+                font-size: 2rem;
+            }
+
+            .faq-question {
+                font-size: 1rem;
+            }
+        }
+
+        .btn.futuristic-enhanced {
+            position: relative;
+            display: inline-block;
+            padding: 14px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            background: linear-gradient(135deg, #ff0000, #a50000);
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 4px 12px rgba(150, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 4s linear;
+        }
+
+        .btn.futuristic-enhanced:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(131, 0, 0, 0.7), 0 0 40px rgba(0, 198, 255, 0.4);
+        }
+
+        .btn.futuristic-enhanced::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+            opacity: 0.6;
+            z-index: -1;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 12px;
+        }
+
+        .btn.futuristic-enhanced:hover::before {
+            opacity: 1;
+        }
+
+        .btn.futuristic-enhanced::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease-in-out;
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        .btn.futuristic-enhanced:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        @keyframes subtleGlow {
+            0%, 100% {
+                box-shadow: 0 4px 12px rgba(255, 0, 0, 0.5);
+            }
+            50% {
+                box-shadow: 0 6px 16px rgba(255, 0, 0, 0.7);
+            }
+        }
+
+        @keyframes subtleGradientShift {
+            0%, 100% {
+                background: linear-gradient(135deg, #ff0000, #b40000);
+            }
+            50% {
+                background: linear-gradient(135deg, #b40000, #ff0000);
+            }
+        }
+
+        .btn.futuristic-enhanced {
+            animation: subtleGlow 3s ease-in-out infinite, subtleGradientShift 100s linear infinite;
+        }
     </style>
-
-
-    <div id="overlay">
-        <div>
-            <p>Click to enter...</p>
-        </div>
+</head>
+<body>
+    <div id="intro-screen">
+        <video id="background-video" autoplay="" playsinline="" muted="" preload="auto">
+            <source src="media/intro2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1 id="intro-text">
+            <span class="white-glow ogn">Click to </span>
+            <span class="blue-glow lol">enter</span>
+        </h1>
     </div>
 
-    <div class="galaxy">
-        <div class="stars1"></div>
-        <div class="stars2"></div>
-        <div class="stars3"></div>
-    </div>
+    <div id="main-content">
+        <header>
+            <nav class="container">
+                <div class="logo">
+                    <span class="ogn white-glow">ogn</span>
+                    <span class="lol blue-glow">lol</span>
+                </div>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="https://discord.gg/ogns" target="_blank">Discord</a>
+                    <a href="https://ogn.lol/museum" target="_blank">Museum</a>
+                </div>
+            </nav>
+        </header>
 
-    <div class="container">
-        <h1 class="title">ogn.lol</h1>
-        <div class="profiles">
+        <main>
+            <section class="hero">
+                <canvas id="canvas"></canvas>
+                <div class="hero-content">
+                    <h1><span class="floating-text white-glow">ogn</span> <span class="floating-text blue-glow lol">lol</span></h1>
+                    <p><span class="white-glow">Experience the ultimate experience in all games.</span></p>
+                    <a href="#pricing" class="btn glow-effect">Get Started</a>
+                    
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-value blue-glow" id="customers">0</span>
+                            <span class="stat-label white-glow">Customers</span>
+                        </div>
+                        <div class="stat-item products-sold">
+                            <span class="stat-value blue-glow" id="products-sold">0</span>
+                            <span class="stat-label white-glow">Products Sold</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value blue-glow" id="satisfaction-rate">0</span>
+                            <span class="stat-label white-glow">Satisfaction Rate</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <section id="features" class="section">
+                <div class="container">
+                    <h2 class="section-title blue-glow">Our features</h2>
+                    <div class="virtualization-grid">
+                        <div class="virtualization-item">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <h3>Motherboard</h3>
+                            <p>Complete virtualization of motherboard identifiers.</p>
+                        </div>
+                        <div class="virtualization-item">
+                            <i class="fas fa-desktop"></i>
+                            <h3>GPU</h3>
+                            <p>Mask both virtual and physical GPU identities.</p>
+                        </div>
+                        <div class="virtualization-item">
+                            <i class="fas fa-network-wired"></i>
+                            <h3>ARP</h3>
+                            <p>Advanced router address concealment technology.</p>
+                        </div>
+                        <div class="virtualization-item">
+                            <i class="fas fa-microchip"></i>
+                            <h3>CPU</h3>
+                            <p>Server communication between CPU info and Windows.</p>
+                        </div>
+                        <div class="virtualization-item">
+                            <i class="fas fa-cogs"></i>
+                            <h3>BIOS</h3>
+                            <p>Create an entirely new BIOS table for ultimate protection.</p>
+                        </div>
+                        <div class="virtualization-item">
+                            <i class="fas fa-hdd"></i>
+                            <h3>SSD/NVME</h3>
+                            <p>Virtualize all serial numbers from connected storage devices.</p>
+                        </div>
+                        <div class="virtualization-item">
+                            <i class="fas fa-memory"></i>
+                            <h3>RAM</h3>
+                            <p>Virtualize your memory modules to protect hardware specifications.</p>
+                        </div>
+                        <div class="virtualization-item">
+                            <i class="fas fa-tv"></i>
+                            <h3>Monitor</h3>
+                            <p>Mask monitor identifiers, including serial numbers and specs.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="pricing" class="section">
+                <div class="container">
+                    <h2 class="section-title blue-glow">Pricing Plans</h2>
+                    <div class="pricing-grid">
+                        <div class="pricing-item blue">
+                            <h3>AIO Virtualizer 3-Day</h3>
+                            <p>Perfect for a quick gaming session</p>
+                            <div class="price">$6</div>
+                            <button class="btn futuristic-enhanced" data-sellhub-product="22614d71-1620-45a7-92c8-14503387903d" data-sell-theme="">
+                                Purchase
+                            </button>
+                            <p> ‎ </p>
+                            <p>✔ Temporary</p>
+                            <p>✔ Permanent</p>
+                            <p>✔ EasyAntiCheat</p>
+                            <p>✔ VGK (Valorant)</p>
+                            <p>✔ BattlEye</p>
+                            <p>✔ Ricochet (All COD Titles)</p>
+                            <p>✔ FiveM</p>
+                        </div>
+                        <div class="pricing-item">
+                            <h3>AIO Virtualizer Weekly</h3>
+                            <p>Ideal for weekend warriors</p>
+                            <div class="price">$14</div>
+                            <button class="btn futuristic-enhanced" data-sellhub-product="7c707423-86fe-45f4-b726-b0a1100336cb" data-sell-theme="">
+                                Purchase
+                            </button>
+                            <p> ‎ </p>
+                            <p>✔ Temporary</p>
+                            <p>✔ Permanent</p>
+                            <p>✔ EasyAntiCheat</p>
+                            <p>✔ VGK (Valorant)</p>
+                            <p>✔ BattlEye</p>
+                            <p>✔ Ricochet (All COD Titles)</p>
+                            <p>✔ FiveM</p>
+                        </div>
+                        <div class="pricing-item">
+                            <h3>AIO Virtualizer Monthly</h3>
+                            <p>Best value for regular users</p>
+                            <div class="price">$20</div>
+                            <button class="btn futuristic-enhanced" data-sellhub-product="736294d2-9c4b-4ff6-974f-fd8e4b387a95" data-sell-theme="">
+                                Purchase
+                            </button>
+                            <p> ‎ </p>
+                            <p>✔ Temporary</p>
+                            <p>✔ Permanent</p>
+                            <p>✔ EasyAntiCheat</p>
+                            <p>✔ VGK (Valorant)</p>
+                            <p>✔ BattlEye</p>
+                            <p>✔ Ricochet (All COD Titles)</p>
+                            <p>✔ FiveM</p>
+                        </div>
+                        <div class="pricing-item">
+                            <h3>AIO Virtualizer Lifetime</h3>
+                            <p>Your permanent passport to domination.</p>
+                            <div class="price">$100</div>
+                            <button class="btn futuristic-enhanced" data-sellhub-product="c84e9485-7143-4aae-85ab-ac59ac55e4c3" data-sell-theme="">
+                                Purchase
+                            </button>
+                            <p> ‎ </p>
+                            <p>✔ Temporary</p>
+                            <p>✔ Permanent</p>
+                            <p>✔ EasyAntiCheat</p>
+                            <p>✔ VGK (Valorant)</p>
+                            <p>✔ BattlEye</p>
+                            <p>✔ Ricochet (All COD Titles)</p>
+                            <p>✔ FiveM</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
             
-            <a href="https://discord.gg/ogns" class="profile-link">
-                <div class="profile">
-                    <img src="images/ogns.jpg" alt="ogns">
-                    <p>.gg/ogns</p>
+<!--
+            <section id="pricing" class="section">
+                <div class="container">
+                    <h2 class="section-title blue-glow">Perm Virtualizer Pricing Plans</h2>
+                    <div class="pricing-grid">
+                        <div class="pricing-item blue">
+                            <h3>Perm Virtualizer OneTime</h3>
+                            <p>Perfect for a quick gaming session</p>
+                            <div class="price">$25</div>
+                            <button class="btn futuristic-enhanced" data-sell-store="54925" data-sell-product="268565" data-sell-darkmode="true" data-sell-theme="">
+                                Purchase
+                            </button>
+                            <br />
+                            <p> ‎ </p>
+                            <p>✔ Temporary</p>
+                            <p>✔ Permanent</p>
+                            <p>✔ EasyAntiCheat</p>
+                            <p>✔ VGK (Valorant)</p>
+                            <p>✔ BattlEye</p>
+                            <p>✔ Ricochet (All COD Titles)</p>
+                            <p>✔ FiveM</p>
+                        </div>
+                        <div class="pricing-item">
+                            <h3>Perm Virtualizer Lifetime</h3>
+                            <p>Your permanent passport to domination.</p>
+                            <div class="price">$75</div>
+                            <button class="btn futuristic-enhanced" data-sell-store="54925" data-sell-product="268566" data-sell-darkmode="true" data-sell-theme="">
+                                Purchase
+                            </button>
+                            <br />
+                            <p> ‎ </p>
+                            <p>✔ Temporary</p>
+                            <p>✔ Permanent</p>
+                            <p>✔ EasyAntiCheat</p>
+                            <p>✔ VGK (Valorant)</p>
+                            <p>✔ BattlEye</p>
+                            <p>✔ Ricochet (All COD Titles)</p>
+                            <p>✔ FiveM</p>
+                        </div>
+                    </div>
                 </div>
-            </a>
-            <a href="https://late.lol/" class="profile-link">
-                <div class="profile">
-                    <img src="images/empathypfpnew.jpg" alt="Empathy">
-                    <p>@Empathy</p>
+            </section>
+-->
+
+        
+            <section id="pricing" class="section">
+                <div class="container">
+                    <h2 class="section-title blue-glow">Roblox Full Pricing Plans</h2>
+                    <div class="pricing-grid">
+                        <div class="pricing-item blue">
+                            <h3>Roblox Full Daily</h3>
+                            <p>Perfect for a quick gaming session</p>
+                            <div class="price">$5</div>
+                            <button class="btn futuristic-enhanced" data-sellhub-product="1975fbf9-7cd4-4643-9c90-ef4c3fcf1c62" data-sell-theme="">
+                                Purchase
+                            </button>
+                            <p>‎</p>
+                            <p>✔ Undetected</p>
+                            <p>✔ Aim</p>
+                            <p>✔ ESP</p>
+                        </div>
+                        <div class="pricing-item">
+                            <h3>Roblox Full Weekly</h3>
+                            <p>Ideal for weekend warriors</p>
+                            <div class="price">$20</div>
+                            <button class="btn futuristic-enhanced" data-sellhub-product="c4041629-b257-470d-b9f3-53ae57055726" data-sell-theme="">
+                                Purchase
+                            </button>
+                            <p>‎</p>
+                            <p>✔ Undetected</p>
+                            <p>✔ Aim</p>
+                            <p>✔ ESP</p>
+                        </div>
+                        <div class="pricing-item">
+                            <h3>Roblox Full Monthly</h3>
+                            <p>Best value for regular users</p>
+                            <div class="price">$40</div>
+                            <button class="btn futuristic-enhanced" data-sellhub-product="855943af-4cd8-40cf-85a8-98586d0c66a5" data-sell-theme="">
+                                Purchase
+                            </button>
+                            <p>‎</p>
+                            <p>✔ Undetected</p>
+                            <p>✔ Aim</p>
+                            <p>✔ ESP</p>
+                        </div>
+                        <div class="pricing-item">
+                            <h3>Roblox Full Lifetime</h3>
+                            <p>Your permanent passport to domination.</p>
+                            <div class="price">$235</div>
+                            <button class="btn futuristic-enhanced" data-sellhub-product="954e6d1c-28a4-4fd7-abfb-4899b21a90c6" data-sell-theme="">
+                                Purchase
+                            </button>
+                            <p>‎</p>
+                            <p>✔ Undetected</p>
+                            <p>✔ Aim</p>
+                            <p>✔ ESP</p>
+                        </div>
+                    </div>
                 </div>
-            </a>
-            <a href="https://fakecrime.bio/ogn" class="profile-link">
-                <div class="profile">
-                    <i class="fa-solid fa-crown"></i>
-                    <img src="images/ogn.jpg" alt="ogn">
-                    <p>@ogn</p>
+            </section>
+            
+            <section id="pricing" class="section">
+                <div class="container">
+                    <h2 class="section-title blue-glow">Roblox Lite Pricing Plans</h2>
+                    <div class="pricing-grid">
+                        <div class="pricing-item blue">
+                            <h3>Roblox Lite Daily</h3>
+                            <p>Perfect for a quick gaming session</p>
+                            <div class="price">$4</div>
+                            <button class="btn futuristic-enhanced" data-sell-store="54925" data-sell-product="268570" data-sell-darkmode="true" data-sell-theme="">
+                                Purchase
+                            </button>
+                            <p>‎</p>
+                            <p>✔ Undetected</p>
+                            <p>✔ Player Icon ESP</p>
+                        </div>
+                        <div class="pricing-item">
+                            <h3>Roblox Lite Weekly</h3>
+                            <p>Ideal for weekend warriors</p>
+                            <div class="price">$15</div>
+                            <button class="btn futuristic-enhanced" data-sell-store="54925" data-sell-product="268572" data-sell-darkmode="true" data-sell-theme="">
+                                Purchase
+                            </button>
+                            <p>‎</p>
+                            <p>✔ Undetected</p>
+                            <p>✔ Player Icon ESP</p>
+                        </div>
+                        <div class="pricing-item">
+                            <h3>Roblox Lite Monthly</h3>
+                            <p>Best value for regular users</p>
+                            <div class="price">$30</div>
+                            <button class="btn futuristic-enhanced" data-sell-store="54925" data-sell-product="268574" data-sell-darkmode="true" data-sell-theme="">
+                                Purchase
+                            </button>
+                            <p>‎</p>
+                            <p>✔ Undetected</p>
+                            <p>✔ Player Icon ESP</p>
+                        </div>
+                    </div>
                 </div>
-            </a>
-            <a href="https://t.me/procomkid" class="profile-link">
-                <div class="profile">
-                    <img src="images/Widowpfp.jpg" alt="widow">
-                    <p>@Widow</p>
+            </section>
+<!--            
+            <section id="pricing" class="section">
+                <div class="container">
+                    <h2 class="section-title blue-glow">Delta Force Internal Pricing Plans</h2>
+                    <div class="pricing-grid">
+                        <div class="pricing-item blue">
+                            <h3>Delta Force Daily</h3>
+                            <p>Perfect for a quick gaming session</p>
+                            <div class="price">$6</div>
+                            <a href="#" class="btn futuristic-enhanced" onclick="openModal('227de445-e437-4797-ab43-f421462b9c7f', '6a0d2978-c94c-472d-993d-bb7d9cfce92f')">Purchase</a>
+                            <p> ‎ </p>
+                            <p>✔ Undetected</p>
+                            <p>✔ Aim</p>
+                            <p>✔ ESP</p>
+                        </div>
+                        <div class="pricing-item">
+                            <h3>Delta Force Weekly</h3>
+                            <p>Ideal for weekend warriors</p>
+                            <div class="price">$30</div>
+                            <a href="#" class="btn futuristic-enhanced" onclick="openModal('227de445-e437-4797-ab43-f421462b9c7f', '795168bb-4b58-46b2-a0c7-637d9307ad85')">Purchase</a>
+                            <p> ‎ </p>
+                            <p>✔ Undetected</p>
+                            <p>✔ Aim</p>
+                            <p>✔ ESP</p>
+                        </div>
+                        <div class="pricing-item">
+                            <h3>Delta Force Monthly</h3>
+                            <p>Best value for regular users</p>
+                            <div class="price">$55</div>
+                            <a href="#" class="btn futuristic-enhanced" onclick="openModal('227de445-e437-4797-ab43-f421462b9c7f', 'd87e0f15-5164-4075-a21e-47dcea78d69f')">Purchase</a>
+                            <p> ‎ </p>
+                            <p>✔ Undetected</p>
+                            <p>✔ Aim</p>
+                            <p>✔ ESP</p>
+                        </div>
+                    </div>
                 </div>
-            </a>
-            <a href="https://late.lol/" class="profile-link">
-                <div class="profile">
-                    <img src="images/memory.jpg" alt="memory">
-                    <p>ogmarket</p>
+            </section>
+            
+
+            <section id="pricing" class="section">
+                <div class="container">
+                    <h2 class="section-title blue-glow">BO6 / WZ Pricing Plans</h2>
+                    <div class="pricing-grid">
+                        <div class="pricing-item blue">
+                            <h3>BO6 / WZ Daily</h3>
+                            <p>Perfect for a quick gaming session</p>
+                            <div class="price">$5</div>
+                            <a href="#" class="btn futuristic-enhanced" onclick="openModal('227de445-e437-4797-ab43-f421462b9c7f', '6388c5b7-1aeb-4cf6-8e0c-d01f09460f36')">Purchase</a>
+                            <p>‎</p>
+                            <p>✔ Undetected</p>
+                            <p>✔ Aim</p>
+                            <p>✔ ESP</p>
+                            <p>✔ Anticheat blocker</p>
+                            <p>✔ Unlock-all</p>
+                            <p>✔ Steam/Battle.net/Gamepass</p>
+                        </div>
+                        <div class="pricing-item">
+                            <h3>BO6 / WZ Weekly</h3>
+                            <p>Ideal for weekend warriors</p>
+                            <div class="price">$12</div>
+                            <a href="#" class="btn futuristic-enhanced" onclick="openModal('227de445-e437-4797-ab43-f421462b9c7f', '3e107137-e9fe-43d2-a08b-12e1afc4c426')">Purchase</a>
+                            <p>‎</p>
+                            <p>✔ Undetected</p>
+                            <p>✔ Aim</p>
+                            <p>✔ ESP</p>
+                            <p>✔ Anticheat blocker</p>
+                            <p>✔ Unlock-all</p>
+                            <p>✔ Steam/Battle.net/Gamepass</p>
+                        </div>
+                        <div class="pricing-item">
+                            <h3>BO6 / WZ Monthly</h3>
+                            <p>Best value for regular users</p>
+                            <div class="price">$25</div>
+                            <a href="#" class="btn futuristic-enhanced" onclick="openModal('227de445-e437-4797-ab43-f421462b9c7f', 'c662e65b-7596-498d-9064-381c776dd408')">Purchase</a>
+                            <p>‎</p>
+                            <p>✔ Undetected</p>
+                            <p>✔ Aim</p>
+                            <p>✔ ESP</p>
+                            <p>✔ Anticheat blocker</p>
+                            <p>✔ Unlock-all</p>
+                            <p>✔ Steam/Battle.net/Gamepass</p>
+                        </div>
+                    </div>
                 </div>
-            </a>
-        </div>
-        <div class="archive-link">
-            <a href="/museum" class="profile-link">
-                <p>Museum</p>
-            </a>
-        </div>
+            </section>
+-->
+
+            <section id="faq" class="section">
+                <div class="container">
+                    <h2 class="section-title blue-glow">Frequently Asked Questions</h2>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question white-glow">What is the purpose of ogn Virtualizer?</div>
+                            <div class="faq-answer">The ogn Virtualizer eliminates any unauthorized access to your hardware data by third-party software, operating at the kernel level. Please note that the use of ognVM for any illegal or fraudulent activities is strictly prohibited.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question white-glow">Is it detectable?</div>
+                            <div class="faq-answer">Our advanced technology ensures that ogn Virtualizer remains undetectable by current anti-cheat systems and tracking methods.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question white-glow">Do I need to reinstall Windows?</div>
+                            <div class="faq-answer">In most cases, no. Xanax Virtualizer works without requiring a full Windows reinstallation, making it quick and convenient to use. For valorant and extreme Fortnite bans, a reinstall may be needed.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question white-glow">How long does the process take?</div>
+                            <div class="faq-answer">The virtualization process typically takes 3-7 minutes for most users, depending on your system configuration.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question white-glow">Will I receive a refund if the virtualizer is incompatible with my PC?</div>
+                            <div class="faq-answer">Absolutely. We offer refunds for cases where the virtualizer does not function on your computer.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question white-glow">What can I expect after making a purchase?</div>
+                            <div class="faq-answer">Upon completing your purchase, you will receive a download link along with a unique license key via email.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question white-glow">What should I do if I lose my license key?</div>
+                            <div class="faq-answer">You are responsible for the security of your license key. Unfortunately, we cannot provide reimbursement or issue a replacement key.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question white-glow">Are all motherboards compatible with the virtualizer?</div>
+                            <div class="faq-answer">Yes, Xanax Virtualizer supports all motherboards.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question white-glow">Is there a risk of my PC becoming inoperable during virtualization?</div>
+                            <div class="faq-answer">No, Xanax Virtualizer is designed with safety in mind and includes failsafes to prevent any potential damage to your PC.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question white-glow">How many times can I use the virtualizer?</div>
+                            <div class="faq-answer">You can utilize the virtualizer an unlimited number of times, provided that your license key remains valid.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question white-glow">Is the virtualization process user-friendly?</div>
+                            <div class="faq-answer">Yes, the process is straightforward: simply enable virtualization and disable secure boot, then launch the virtualizer and log in.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="section">
+            <div class="container">
+                <p>  2025 ogn.lol All rights reserved.</p>
+                <p>
+                    <a href="https://discord.gg/ogns" target="_blank">Discord</a> |
+                    <a href="https://ogn.lol/museum" target="_blank">Museum</a>
+                </p>
+            </div>
+        </footer>
     </div>
+
+    <audio id="background-music" loop="">
+        <source src="media/night.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     
+    <script type="21c8569107ae4a66c2dd8051-text/javascript">
+        function animateValue(id, start, end, duration) {
+            let current = start;
+            const range = end - start;
+            const increment = end > start ? 1 : -1;
+            const stepTime = Math.abs(Math.floor(duration / range));
+            const obj = document.getElementById(id);
+            const timer = setInterval(function() {
+                current += increment;
+                obj.textContent = current + (id === 'satisfaction-rate' ? '%' : '+');
+                if (current == end) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
 
-    <div id="bottom-left">
-        © <a href="https://discord.gg/ogns" target="_blank" style="color:white; text-decoration: none;">ogn</a> | <a href="https://ogn.lol/" target="_blank" style="color:white; text-decoration: none;">ogn.lol</a> | 2025
-    </div>
-
-    <script>
-        document.getElementById("overlay").addEventListener("click", function() {
-            document.getElementById("overlay").style.display = "none";
-            var audio = new Audio('/music/ANTARCTICA.mp3');
-            audio.volume = 0.3;
-            audio.play();
+        window.addEventListener('load', function() {
+            animateValue("customers", 0, 600, 3);
+            animateValue("products-sold", 0, 800, 3);
+            animateValue("satisfaction-rate", 0, 99, 3);
         });
-    </script>
 
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canvas'), alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        const wireframeMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
+        const superDenseWireframeMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
+
+        const topHalfSphere = new THREE.SphereGeometry(2, 256, 256, 0, Math.PI * 2, 0, Math.PI / 2);
+        const bottomHalfSphere = new THREE.SphereGeometry(2, 64, 64, 0, Math.PI * 2, Math.PI / 2, Math.PI);
+
+        const topHalfCylinder = new THREE.CylinderGeometry(2, 2, 4, 256);
+        const bottomHalfCylinder = new THREE.CylinderGeometry(2, 2, 4, 64);
+
+        const pillShape = new THREE.Group();
+
+        const topSphereMesh = new THREE.Mesh(topHalfSphere, superDenseWireframeMaterial);
+        topSphereMesh.position.y = 4;
+
+        const bottomSphereMesh = new THREE.Mesh(bottomHalfSphere, wireframeMaterial);
+        bottomSphereMesh.position.y = -4;
+
+        const topCylinderMesh = new THREE.Mesh(topHalfCylinder, superDenseWireframeMaterial);
+        topCylinderMesh.position.y = 2;
+
+        const bottomCylinderMesh = new THREE.Mesh(bottomHalfCylinder, wireframeMaterial);
+        bottomCylinderMesh.position.y = -2;
+
+        pillShape.add(topSphereMesh);
+        pillShape.add(bottomSphereMesh);
+        pillShape.add(topCylinderMesh);
+        pillShape.add(bottomCylinderMesh);
+
+        scene.add(pillShape);
+
+        camera.position.z = 15;
+
+        let positionOffset = 0;
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            pillShape.rotation.x += 0.01;
+            pillShape.rotation.y += 0.01;
+            pillShape.rotation.z += 0.01;
+
+            positionOffset += 0.01;
+            pillShape.position.x = Math.sin(positionOffset) * 5;
+            pillShape.position.y = Math.cos(positionOffset) * 1.5;
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray('.virtualization-item').forEach((item, index) => {
+            gsap.from(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top bottom-=100',
+                    toggleActions: 'play none none reverse'
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                delay: index * 0.1
+            });
+        });
+
+        gsap.utils.toArray('.pricing-item').forEach((item, index) => {
+            gsap.from(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top bottom-=100',
+                    toggleActions: 'play none none reverse'
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                delay: index * 0.1
+            });
+        });
+
+        const introScreen = document.getElementById('intro-screen');
+        const mainContent = document.getElementById('main-content');
+        const backgroundMusic = document.getElementById('background-music');
+
+        introScreen.addEventListener('click', () => {
+            introScreen.style.opacity = '0';
+            setTimeout(() => {
+                introScreen.style.display = 'none';
+                mainContent.style.opacity = '1';
+                backgroundMusic.play().catch(error => {
+                    console.error("Audio playback failed:", error);
+                });
+            }, 1000);
+        });
+
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isOpen = question.classList.contains('active');
+
+                faqQuestions.forEach(q => {
+                    if (q !== question) {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('active');
+                        q.nextElementSibling.style.maxHeight = '0';
+                    }
+                });
+
+                question.classList.toggle('active');
+                answer.classList.toggle('active');
+
+                if (!isOpen) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.style.maxHeight = '0';
+                }
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('resize', onWindowResize, false);
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function openModal(storeId, productId) {
+            window.openSellSnModal(storeId, productId);
+        }
+        window.initializeSellSnEmbed();
+    </script>
+    <script src="js/rocket-loader.min.js" data-cf-settings="a5beb36fa6741475f8aef7d2-|49" defer="" type="21c8569107ae4a66c2dd8051-text/javascript"></script>
+    <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" data-cf-beacon="{" rayid":"915c94e05c755a8b","version":"2025.1.0","r":1,"token":"6fe08aeccf9142bd84dd1a524bd63bcc","servertiming":{"name":{"cfextpri":true,"cfl4":true,"cfspeedbrain":true,"cfcachestatus":true}}}"="" crossorigin="anonymous" type="21c8569107ae4a66c2dd8051-text/javascript"></script>
+<script src="js/rocket-loader.min.js" data-cf-settings="21c8569107ae4a66c2dd8051-|49" defer=""></script>
 
 </body></html>
